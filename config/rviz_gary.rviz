@@ -5,11 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Status1
-        - /RightFishEye1
-        - /LeftFishEye1
-        - /Left Front RGB1
-        - /Right Front RGB1
+        - /TF1
       Splitter Ratio: 0.2599179148674011
     Tree Height: 298
   - Class: rviz_common/Selection
@@ -99,9 +95,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 0.9841154217720032
+      Max Intensity: 0.9768994450569153
       Min Color: 0; 0; 0
-      Min Intensity: 0.8256680369377136
+      Min Intensity: 0.39157408475875854
       Name: Left Lidar
       Position Transformer: XYZ
       Selectable: true
@@ -132,9 +128,42 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 0.984115719795227
+      Max Intensity: 0.978042483329773
       Min Color: 0; 0; 0
-      Min Intensity: 0.8461079001426697
+      Min Intensity: 0.3541227877140045
+      Name: Center Lidar
+      Position Transformer: XYZ
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Flat Squares
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /carla/ego_vehicle/center_lidar
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 0.9780425429344177
+      Min Color: 0; 0; 0
+      Min Intensity: 0.35945624113082886
       Name: Right Lidar
       Position Transformer: XYZ
       Selectable: true
@@ -171,6 +200,7 @@ Visualization Manager:
         Odometry: true
         Right Front RGB: true
         Right Lidar: true
+        TF: true
         Value: true
       Zoom Factor: 1
     - Class: rviz_default_plugins/Camera
@@ -194,6 +224,7 @@ Visualization Manager:
         Right Front RGB: true
         Right Lidar: true
         RightFishEye: true
+        TF: true
         Value: true
       Zoom Factor: 1
     - Class: rviz_default_plugins/Camera
@@ -217,6 +248,7 @@ Visualization Manager:
         Right Front RGB: true
         Right Lidar: true
         RightFishEye: true
+        TF: true
         Value: true
       Zoom Factor: 1
     - Class: rviz_default_plugins/Camera
@@ -240,40 +272,67 @@ Visualization Manager:
         Odometry: true
         Right Lidar: true
         RightFishEye: true
+        TF: true
         Value: true
       Zoom Factor: 1
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz_default_plugins/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 0
+    - Class: rviz_default_plugins/TF
       Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 0.9841154217720032
-      Min Color: 0; 0; 0
-      Min Intensity: 0.8190735578536987
-      Name: Center Lidar
-      Position Transformer: XYZ
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.009999999776482582
-      Style: Flat Squares
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /carla/ego_vehicle/center_lidar
-      Use Fixed Frame: true
-      Use rainbow: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        ego_vehicle:
+          Value: true
+        ego_vehicle/center_lidar:
+          Value: true
+        ego_vehicle/front_left_rgb:
+          Value: true
+        ego_vehicle/front_right_rgb:
+          Value: true
+        ego_vehicle/gnss:
+          Value: true
+        ego_vehicle/imu:
+          Value: true
+        ego_vehicle/left_fish_eye:
+          Value: true
+        ego_vehicle/left_lidar:
+          Value: true
+        ego_vehicle/rgb_view:
+          Value: true
+        ego_vehicle/right_fish_eye:
+          Value: true
+        ego_vehicle/right_lidar:
+          Value: true
+        map:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        map:
+          ego_vehicle:
+            ego_vehicle/center_lidar:
+              {}
+            ego_vehicle/front_left_rgb:
+              {}
+            ego_vehicle/front_right_rgb:
+              {}
+            ego_vehicle/gnss:
+              {}
+            ego_vehicle/imu:
+              {}
+            ego_vehicle/left_fish_eye:
+              {}
+            ego_vehicle/left_lidar:
+              {}
+            ego_vehicle/rgb_view:
+              {}
+            ego_vehicle/right_fish_eye:
+              {}
+            ego_vehicle/right_lidar:
+              {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
@@ -333,10 +392,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.315397024154663
+      Pitch: 0.6953967809677124
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.015399932861328
+      Yaw: 3.140401601791382
     Saved: ~
 Window Geometry:
   Displays:

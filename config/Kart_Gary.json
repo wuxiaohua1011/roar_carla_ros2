@@ -25,14 +25,14 @@
                     "id": "front_left_rgb",
                     "spawn_point": {
                         "x": 0.5,
-                        "y": -0.5,
+                        "y": 0.5,
                         "z": 2.0,
                         "roll": 0.0,
                         "pitch": 0.0,
                         "yaw": 0.0
                     },
-                    "image_size_x": 1524,
-                    "image_size_y": 772,
+                    "image_size_x": 762,
+                    "image_size_y": 386,
                     "fov": 34
                 },
                 {
@@ -40,14 +40,14 @@
                     "id": "front_right_rgb",
                     "spawn_point": {
                         "x": 0.5,
-                        "y": 0.5,
+                        "y": -0.5,
                         "z": 2.0,
                         "roll": 0.0,
                         "pitch": 0.0,
                         "yaw": 0.0
                     },
-                    "image_size_x": 1524,
-                    "image_size_y": 772,
+                    "image_size_x": 762,
+                    "image_size_y": 386,
                     "fov": 34
                 },
                 {
@@ -55,14 +55,14 @@
                     "id": "right_fish_eye",
                     "spawn_point": {
                         "x": 0.5,
-                        "y": 0.5,
+                        "y": -0.5,
                         "z": 2.0,
                         "roll": 0.0,
                         "pitch": 0.0,
                         "yaw": -45.0
                     },
-                    "image_size_x": 1524,
-                    "image_size_y": 772,
+                    "image_size_x": 762,
+                    "image_size_y": 386,
                     "fov": 102.8
                 },
                 {
@@ -70,14 +70,14 @@
                     "id": "left_fish_eye",
                     "spawn_point": {
                         "x": 0.5,
-                        "y": -0.5,
+                        "y": 0.5,
                         "z": 2.0,
                         "roll": 0.0,
                         "pitch": 0.0,
                         "yaw": 45.0
                     },
-                    "image_size_x": 1524,
-                    "image_size_y": 772,
+                    "image_size_x": 762,
+                    "image_size_y": 386,
                     "fov": 102.8
                 },
                 {
@@ -165,7 +165,7 @@
                     "type": "sensor.other.gnss",
                     "id": "gnss",
                     "spawn_point": {
-                        "x": 1.0,
+                        "x": 0.0,
                         "y": 0.0,
                         "z": 2.0
                     },
@@ -180,7 +180,7 @@
                     "type": "sensor.other.imu",
                     "id": "imu",
                     "spawn_point": {
-                        "x": 2.0,
+                        "x": 0.0,
                         "y": 0.0,
                         "z": 2.0,
                         "roll": 0.0,

@@ -1,0 +1,21 @@
+{
+    "objects": [
+        {
+            "type": "sensor.pseudo.objects",
+            "id": "objects"
+        },
+        {
+            "type": "vehicle.audi.a2",
+            "id": "target_vehicle",
+            "spawn_point": {
+                "x": 257.0,
+                "y": -59.0,
+                "z": 0.0,
+                "roll": 0.0,
+                "pitch": 0.0,
+                "yaw": 0.0
+            },
+            "sensors": []
+        }
+    ]
+}
