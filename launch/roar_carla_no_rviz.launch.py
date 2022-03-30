@@ -10,7 +10,6 @@ def generate_launch_description():
     base_path = os.path.realpath(
         get_package_share_directory("roar_carla_ros2")
     )  # also tried without realpath
-    rviz_path = base_path + "/config/rviz_gary.rviz"
     vehicle_config_path = base_path + "/config/Kart_Gary.json"
 
     ld = launch.LaunchDescription(
@@ -126,13 +125,6 @@ def generate_launch_description():
                         "control_id"
                     ),
                 }.items(),
-            ),
-            launch_ros.actions.Node(
-                package="rviz2",
-                executable="rviz2",
-                name="rviz2",
-                output="screen",
-                arguments=["-d", rviz_path],
             ),
             launch.actions.IncludeLaunchDescription(
                 launch.launch_description_sources.PythonLaunchDescriptionSource(
