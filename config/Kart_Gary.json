@@ -31,9 +31,9 @@
                         "pitch": 0.0,
                         "yaw": 0.0
                     },
-                    "image_size_x": 762,
-                    "image_size_y": 386,
-                    "fov": 34
+                    "image_size_x": 1344,
+                    "image_size_y": 376,
+                    "fov": 110
                 },
                 {
                     "type": "sensor.camera.rgb",
@@ -46,9 +46,9 @@
                         "pitch": 0.0,
                         "yaw": 0.0
                     },
-                    "image_size_x": 762,
-                    "image_size_y": 386,
-                    "fov": 34
+                    "image_size_x": 1344,
+                    "image_size_y": 376,
+                    "fov": 110
                 },
                 {
                     "type": "sensor.camera.rgb",
