@@ -10,8 +10,8 @@ def generate_launch_description():
     base_path = os.path.realpath(
         get_package_share_directory("roar_carla_ros2")
     )  # also tried without realpath
-    rviz_path = base_path + "/config/rviz_gary.rviz"
-    vehicle_config_path = base_path + "/config/Kart_Gary.json"
+    rviz_path = base_path + "/config/rviz_berkeley.rviz"
+    vehicle_config_path = base_path + "/config/berkeley_gokart.json"
 
     ld = launch.LaunchDescription(
         [
