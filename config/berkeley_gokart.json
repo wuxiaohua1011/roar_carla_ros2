@@ -35,6 +35,21 @@
                     "image_size_y": 376,
                     "fov": 110
                 },
+                {
+                    "type": "sensor.camera.depth",
+                    "id": "front_depth",
+                    "spawn_point": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 0.56,
+                        "roll": 0.0,
+                        "pitch": 0.0,
+                        "yaw": 0.0
+                    },
+                    "image_size_x": 1344,
+                    "image_size_y": 376,
+                    "fov": 110
+                },
                 
                 {
                     "type": "sensor.lidar.ray_cast",
