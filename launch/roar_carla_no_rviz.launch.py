@@ -39,9 +39,7 @@ def generate_launch_description():
             launch.actions.DeclareLaunchArgument(
                 name="spawn_point_ego_vehicle", default_value="spawn_point_hero0"
             ),
-            launch.actions.DeclareLaunchArgument(
-                name="town", default_value="Carla/Maps/Town04"
-            ),
+            launch.actions.DeclareLaunchArgument(name="town", default_value="Town04"),
             launch.actions.DeclareLaunchArgument(name="passive", default_value="False"),
             launch.actions.DeclareLaunchArgument(
                 name="synchronous_mode_wait_for_vehicle_control_command",
@@ -101,9 +99,7 @@ def generate_launch_description():
                     "spawn_point": launch.substitutions.LaunchConfiguration(
                         "spawn_point"
                     ),
-                    "spawn_point_ego_vehicle": launch.substitutions.LaunchConfiguration(
-                        "spawn_point_ego_vehicle"
-                    ),
+                    "spawn_point_ego_vehicle": "specify_ego_vehicle_spawn_in_objects_definition_file",
                     "objects_definition_file": launch.substitutions.LaunchConfiguration(
                         "objects_definition_file"
                     ),
