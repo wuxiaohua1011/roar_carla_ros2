@@ -3,6 +3,9 @@ import os
 import launch
 from ament_index_python.packages import get_package_share_directory
 import launch_ros
+from launch.conditions import IfCondition
+from launch.substitutions import LaunchConfiguration
+from launch.actions import DeclareLaunchArgument
 
 
 def generate_launch_description():
@@ -10,11 +13,17 @@ def generate_launch_description():
     base_path = os.path.realpath(
         get_package_share_directory("roar_carla_ros2")
     )  # also tried without realpath
-    rviz_path = base_path + "/config/rviz_berkeley.rviz"
     vehicle_config_path = base_path + "/config/berkeley_gokart.json"
+
+    should_launch_manual_control_args = DeclareLaunchArgument(
+        "should_launch_manual_control",
+        default_value="False",  # default_value=[], has the same problem
+        description="True to start manual control, false otherwise",
+    )
 
     ld = launch.LaunchDescription(
         [
+            should_launch_manual_control_args,
             launch.actions.DeclareLaunchArgument(
                 name="host", default_value="localhost"
             ),
@@ -40,9 +49,7 @@ def generate_launch_description():
             launch.actions.DeclareLaunchArgument(
                 name="spawn_point_ego_vehicle", default_value="spawn_point_hero0"
             ),
-            launch.actions.DeclareLaunchArgument(
-                name="town", default_value="Carla/Maps/Town04"
-            ),
+            launch.actions.DeclareLaunchArgument(name="town", default_value="Town04"),
             launch.actions.DeclareLaunchArgument(name="passive", default_value="False"),
             launch.actions.DeclareLaunchArgument(
                 name="synchronous_mode_wait_for_vehicle_control_command",
@@ -102,9 +109,7 @@ def generate_launch_description():
                     "spawn_point": launch.substitutions.LaunchConfiguration(
                         "spawn_point"
                     ),
-                    "spawn_point_ego_vehicle": launch.substitutions.LaunchConfiguration(
-                        "spawn_point_ego_vehicle"
-                    ),
+                    "spawn_point_ego_vehicle": "specify_ego_vehicle_spawn_in_objects_definition_file",
                     "objects_definition_file": launch.substitutions.LaunchConfiguration(
                         "objects_definition_file"
                     ),
@@ -127,13 +132,6 @@ def generate_launch_description():
                     ),
                 }.items(),
             ),
-            launch_ros.actions.Node(
-                package="rviz2",
-                executable="rviz2",
-                name="rviz2",
-                output="screen",
-                arguments=["-d", rviz_path],
-            ),
             launch.actions.IncludeLaunchDescription(
                 launch.launch_description_sources.PythonLaunchDescriptionSource(
                     os.path.join(
@@ -144,6 +142,9 @@ def generate_launch_description():
                 launch_arguments={
                     "role_name": launch.substitutions.LaunchConfiguration("role_name")
                 }.items(),
+                condition=IfCondition(
+                    LaunchConfiguration("should_launch_manual_control")
+                ),  # 3
             ),
         ]
     )
