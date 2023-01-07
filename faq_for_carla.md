@@ -1,3 +1,9 @@
+<!--
+ Copyright 2023 michael. All rights reserved.
+ Use of this source code is governed by a BSD-style
+ license that can be found in the LICENSE file.
+-->
+
 1. If Vulkan cannot be found on opening
 ![Drag Racing](imgs/vulkan_not_found.png)
     - Make sure your GPU is configured correctly. 
